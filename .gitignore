@@ -1,0 +1,19 @@
+# Genel Geçici Dosyalar
+*.log
+*.tmp
+*.swp
+
+# IDE Dosyaları
+.vscode/
+.idea/
+
+# Derleme ve Çalıştırılabilir Dosyalar
+*.obj
+*.exe
+*.dll
+
+# Node.js Projelerinde Node Modules
+node_modules/
+
+# Unity Dosyaları
+Library/
