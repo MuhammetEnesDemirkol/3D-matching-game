@@ -2,6 +2,14 @@
 
 Bu proje, Unity kullanarak geliştirilmiş bir **Nesne Eşleştirme Oyunu** örneğidir. Oyuncu, aynı türdeki nesneleri yok ederek skor kazanır, zaman geri sayar ve belirli ek özelliklerle (Double Score, +10 saniye vb.) oyuna çeşitlilik katılır.
 
+## Demo / Oynanış Linki
+
+Oyunun WebGL sürümünü buradan oynayabilirsiniz:
+
+[**3D Matching Game - Unity Play**](https://play.unity.com/en/games/c91ff8e2-dbb1-43f5-af36-377ab674bc3a/3d-matching-game)
+
+*Bu link üzerinden oyunu herhangi bir ek kurulum yapmadan tarayıcınızda deneyebilirsiniz. Tüm özelliklerden faydalanabilmek için tam ekran modunda oynayınız!*
+
 # Özellikler
 
 1. **Nesne Eşleştirme Mantığı**  
@@ -98,15 +106,14 @@ Bu proje, Unity kullanarak geliştirilmiş bir **Nesne Eşleştirme Oyunu** örn
 
 ## **Katkıda Bulunanlar ve Geliştirme**
 
-- **Kod**: [Sizin/ekibinizin isimleri], CheckMatching, GameManager, TimerManager vb.  
-- **Model ve Prefablar**: [Küp, Silindir, Sphere vb. Unity primitive veya özel modeller].  
-- **UI**: [Butonlar, TextMeshPro bileşenleri].
+ *Muhammet Enes DEMİRKOL*  
+
 
 Proje serbestçe geliştirilebilir ve yeni özellikler eklenebilir (örn. farklı zorluk seviyeleri, çevrimiçi skor tablosu, farklı objeler vb.).
 
 ---
 
-## **Lisans **
+## **Lisans**
 
 
 
@@ -117,6 +124,4 @@ Copyright (c) 2023 ...
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software ...
 ```
 
----
 
-Bu örnek **README.md** taslağını projenizin ihtiyaçlarına göre özgürce güncelleyebilir, daha fazla teknik detay veya kurulum bilgisi ekleyebilirsiniz. Projenize dair net, anlaşılır ve kılavuz niteliğinde bir belge oluşturmak, projeyi kullanacak veya inceleyecek kişilerin işini kolaylaştıracaktır.
