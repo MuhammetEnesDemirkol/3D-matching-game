@@ -106,11 +106,9 @@ Proje serbestçe geliştirilebilir ve yeni özellikler eklenebilir (örn. farkl�
 
 ---
 
-## **Lisans (Opsiyonel)**
+## **Lisans **
 
-Eğer belirli bir lisans altında paylaşıyorsanız (MIT, Apache 2.0, vb.), buraya ekleyebilirsiniz.
 
-**Örnek**:
 
 ```
 MIT License
