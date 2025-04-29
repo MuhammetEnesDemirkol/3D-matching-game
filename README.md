@@ -1,127 +1,122 @@
-# Nesne Eşleştirme ve Skor Sistemi Projesi
+# 🔮 3D Matching Game with Score System (Unity)
 
-Bu proje, Unity kullanarak geliştirilmiş bir **Nesne Eşleştirme Oyunu** örneğidir. Oyuncu, aynı türdeki nesneleri yok ederek skor kazanır, zaman geri sayar ve belirli ek özelliklerle (Double Score, +10 saniye vb.) oyuna çeşitlilik katılır.
-
-## Demo / Oynanış Linki
-
-Oyunun WebGL sürümünü buradan oynayabilirsiniz:
-
-[**3D Matching Game - Unity Play**](https://play.unity.com/en/games/c91ff8e2-dbb1-43f5-af36-377ab674bc3a/3d-matching-game)
-
-*Bu link üzerinden oyunu herhangi bir ek kurulum yapmadan tarayıcınızda deneyebilirsiniz. Tüm özelliklerden faydalanabilmek için tam ekran modunda oynayınız!*
-
-# Özellikler
-
-1. **Nesne Eşleştirme Mantığı**  
-   - \`CheckMatching\` script’i ile sahnede aynı türdeki iki nesne tespit edildiğinde bu nesneler yok edilir.  
-   - Yanlış eşleşme durumunda nesneler fırlatılabilir veya başka bir aksiyon tanımlanabilir.
-
-2. **Skor Sistemi (Statik Skor)**  
-   - \`GameManager\` (veya benzeri) script, sahneyi yeniden yükleseniz bile skoru korur.  
-   - \`AddScore(int)\` fonksiyonu başarılı eşleşmelerde çağrılarak skor artırılır.  
-
-3. **Zaman Geri Sayımı**  
-   - 30’dan geri sayan bir sayaç (\`TimerManager\` vb. script).  
-   - Süre bittiğinde “Game Over” yazısı aktif olur ve oyun durdurulabilir (\`Time.timeScale = 0\`) ya da farklı bir mantık izlenebilir.
-
-4. **Double Score**  
-   - Oyuncu, butona **sadece bir kez** basarak mevcut skoru ikiye katlayabilir.  
-   - Buton tıklandıktan sonra devre dışı (interactable = false) kalır.
-
-5. **+10 Saniye Butonu**  
-   - Oyuncu, yine yalnızca bir defa kullanabileceği butonla süreye +10 saniye ekleyebilir.  
-   - Oyun boyunca en fazla bir kez basılabilir.
-
-6. **Build ve WebGL Desteği**  
-   - Proje **WebGL Build Support** yüklü Unity Editor ile Web için de derlenebilir.  
-   - `File > Build Settings > WebGL > Switch Platform` adımlarıyla WebGL platformuna geçip “Build” alınabilir.
+## 📖 Project Description
+This project is a **3D Matching Game** developed using Unity. Players earn points by matching objects of the same type, while a countdown timer runs. Additional features like **Double Score** and **+10 Seconds** add variety and challenge to the gameplay.
 
 ---
 
+## 🎮 Demo / Gameplay
+You can try the WebGL version of the game here:
 
+👉 [**3D Matching Game - Unity Play**](https://play.unity.com/en/games/c91ff8e2-dbb1-43f5-af36-377ab674bc3a/3d-matching-game)
 
-- **Scripts/**: Projenin C# kodlarını barındırır.  
-- **Prefabs/**: Nesne prefab’ları (küp, silindir vb.).  
-- **Scenes/**: Unity sahneleri.  
-- **UI/**: Canvas, butonlar ve diğer arayüz bileşenleri.
-
----
-
-## **Kurulum ve Çalıştırma**
-
-1. **Unity Versiyonu**:  
-   - Projenin sorunsuz açılması için Unity **(2020 veya üzeri)** ve **WebGL Build Support** modülüne ihtiyaç duyulabilir.  
-
-2. **Projenin İndirilmesi**  
-   - Kaynak kodu veya proje klasörünü klonlayın/indirin.  
-   - Unity Hub üzerinden **Add** butonuyla proje klasörünü ekleyin.
-
-3. **Açma ve Düzenleme**  
-   - Unity Hub’da projeyi seçip **Open** diyerek açabilirsiniz.  
-   - \`Scenes\` klasöründeki ana sahneyi (\`MainScene\` vb.) açın.
-
-4. **Oyun Testi (Play Mode)**  
-   - Unity Editor içerisinde **Play** butonuna tıklayarak oyunu test edin.  
-   - Nesneleri sürükleyip bırakabilir, eşleştirme sonucunda skor kazanabilirsiniz.  
-   - Sayaç geri sayar, süre bittiğinde “Game Over” görünebilir.  
-   - Butonlarla (Double Score, +10 Saniye) ekstra özellikleri deneyebilirsiniz.
+> No installation needed. Works directly in browser. For best experience, switch to full screen mode.
 
 ---
 
-## **WebGL’e Build Alma**
+## 🔄 Features
+1. **Object Matching Logic**
+   - Using the `CheckMatching` script, objects of the same type are destroyed when matched.
+   - Incorrect matches can trigger different actions (e.g., objects being thrown).
 
-1. **WebGL Modülü Kurulumu**  
-   - Unity Hub → **Installs** → İlgili Unity sürümü → **Add Modules** → **WebGL Build Support**.
+2. **Static Score System**
+   - The score is preserved even if the scene reloads via `GameManager`.
+   - The `AddScore(int)` function increases the score upon correct matches.
 
-2. **Build Settings**  
-   - **File > Build Settings** penceresini açın.  
-   - Solda **WebGL** platformunu seçip **Switch Platform** butonuna tıklayın.  
-   - **Scenes in Build** listesinin doğru sahneleri içerdiğinden emin olun.  
+3. **Countdown Timer**
+   - A timer counts down from 30 seconds (`TimerManager` script).
+   - When the time runs out, "Game Over" appears and gameplay stops (`Time.timeScale = 0`).
 
-3. **Build**  
-   - **Build** veya **Build and Run** butonuna basın.  
-   - Derleme işlemi tamamlandığında Unity, seçtiğiniz klasöre WebGL dosyalarını (index.html, .data, .wasm vb.) çıkarır.  
-   - Test etmek için basit bir yerel sunucu (örn. Python `http.server`) veya Unity’nin **Build and Run** seçeneğini kullanın.
+4. **Double Score Button**
+   - Can be used **only once** to double the current score.
+   - Once clicked, it becomes disabled (`interactable = false`).
 
----
+5. **+10 Seconds Button**
+   - Adds 10 seconds to the timer. Can be used only once.
 
-## **Örnek Oynanış Senaryosu**
-
-1. **Oyuna Başlama**  
-   - Süre 30’dan geriye saymaya başlar.  
-   - Ekranda başlangıç skoru (0) görünür.
-
-2. **Nesne Eşleştirme**  
-   - Aynı türde iki nesneyi doğru şekilde yerleştirerek yok edin.  
-   - **GameManager** → `AddScore(10);` ile skor artar.
-
-3. **Buton Kullanımları**  
-   - **Double Score Butonu**: Bir kez tıklayın, skor ikiye katlansın. Sonra buton devre dışı kalır.  
-   - **+10 Saniye Butonu**: Süreye ek 10 sn ekleyin, bir daha kullanılamaz.
-
-4. **Süre Bittiğinde**  
-   - “Game Over” yazısı aktifleşir, başka etkileşim kalmaz (\`Time.timeScale = 0\` vb.).
+6. **WebGL Support**
+   - Built using Unity with WebGL Build Support enabled.
+   - Use `File > Build Settings > WebGL > Switch Platform` to build for web.
 
 ---
 
-## **Katkıda Bulunanlar ve Geliştirme**
-
- *Muhammet Enes DEMİRKOL*  
-
-
-Proje serbestçe geliştirilebilir ve yeni özellikler eklenebilir (örn. farklı zorluk seviyeleri, çevrimiçi skor tablosu, farklı objeler vb.).
+## 🗂️ Project Structure
+- `Scripts/`: Contains C# scripts.
+- `Prefabs/`: Game object prefabs (e.g., cubes, cylinders).
+- `Scenes/`: Unity scene files.
+- `UI/`: Canvas, buttons, and other interface elements.
 
 ---
 
-## **Lisans**
+## 🚀 Setup and Run
 
+1. **Unity Version**  
+   - Recommended: Unity 2020+ with **WebGL Build Support**.
 
+2. **Download Project**  
+   - Clone or download the project folder.
+   - Add the folder to Unity Hub using the **Add** button.
 
-```
+3. **Open and Edit**  
+   - Open the project in Unity Hub.
+   - Navigate to the `Scenes` folder and open the main scene.
+
+4. **Test Gameplay (Play Mode)**
+   - Press **Play** in Unity Editor to test.
+   - Drag and drop objects, earn points through matching.
+   - Use buttons (Double Score, +10 Seconds) to test additional features.
+
+---
+
+## 🛎️ WebGL Build Instructions
+
+1. **Install WebGL Module**
+   - Unity Hub → Installs → Select version → Add Modules → WebGL Build Support
+
+2. **Build Settings**
+   - Go to `File > Build Settings`
+   - Select **WebGL** and click **Switch Platform**
+   - Make sure the scene is included in **Scenes in Build**
+
+3. **Build**
+   - Click **Build** or **Build and Run**
+   - The output (HTML, .data, .wasm) can be tested using a local server (e.g., Python's `http.server`)
+
+---
+
+## 🎮 Gameplay Flow Example
+
+1. **Game Start**
+   - Timer starts counting down from 30.
+   - Score begins at 0.
+
+2. **Object Matching**
+   - Match two identical objects to remove them and gain points.
+   - `GameManager` → `AddScore(10);`
+
+3. **Button Usage**
+   - **Double Score**: Doubles the score once, then disables itself.
+   - **+10 Seconds**: Adds extra 10 seconds to timer (once only).
+
+4. **When Time Runs Out**
+   - "Game Over" text appears.
+   - Gameplay stops (`Time.timeScale = 0`).
+
+---
+
+## 👨‍💼 Contributors & Development
+**Muhammet Enes DEMIRKOL** – Project Developer
+
+> Project is open for contributions. Feel free to extend it with new features such as difficulty levels, online leaderboard, or custom object types.
+
+---
+
+## 📄 License
+```text
 MIT License
 
 Copyright (c) 2023 ...
-Permission is hereby granted, free of charge, to any person obtaining a copy of this software ...
+Permission is hereby granted, free of charge, to any person obtaining a copy...
 ```
 
-
+---
